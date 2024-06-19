@@ -1,0 +1,56 @@
+<main>
+<div class="container col-lg-6 mt-4">
+    <div>
+        <h1 class="text-center mb-4">Profile</h1>
+        <form id="ProfileForm">
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="firstName" class="form-label">First Name</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="Enter your name" class="form-control" maxlength="50" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="lastName" class="form-label">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Enter your surname" class="form-control" maxlength="50" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" class="form-control" disabled>
+                </div>
+                <div class="col-md-6">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" class="form-control" minlength="6" maxlength="50" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="date" class="form-label">Birthday</label>
+                    <input type="date" id="date" name="date" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="gender" class="form-label">Gender</label>
+                    <select id="gender" name="gender" class="form-select" required>
+                        <option value="" disabled selected>Select your gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <button type="button" onclick="returnDefault()" class="btn btn-secondary w-100">
+                        Reset
+                    </button>
+                </div>
+                <div class="col-md-6">
+                    <button type="submit" id="changeButton" class="btn btn-primary w-100">
+                        Change
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</main>

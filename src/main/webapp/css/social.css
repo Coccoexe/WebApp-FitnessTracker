@@ -1,0 +1,124 @@
+.card {
+    /* This will apply when the viewport is less than 600px */
+    max-width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+    .card {
+        /* This will apply when the viewport is 600px or more */
+        max-width: 50%;
+    }
+}
+
+.menu {
+    color: white;
+    text-shadow: 0.3rem 0.3rem #76a470;
+    font-weight: bold;
+}
+
+.social-menu {
+    color: white !important;
+}
+
+.social-menu:hover {
+    color: #A5DD9B !important;
+}
+
+body {
+    background: #232323;
+!important;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #dee2e608;
+}
+
+.user-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    margin-top: 50px;
+    padding: 10px;
+    display: flex;
+    flex: 3;
+    flex-direction: row;
+}
+
+.list-group {
+    margin: 10px;
+}
+
+.head-button {
+    border-color: #9bc47e
+}
+
+#newPostCard {
+    margin: 0 auto;
+    max-width: 40rem;
+    flex: 2;
+}
+
+#postsContainer {
+    flex: 2;
+}
+
+.pressed {
+    color: red;
+    text-shadow: 3px 3px darkred;
+}
+
+.icon {
+    color: gray !important;
+    text-shadow: 3px 3px darkgray;
+}
+
+.icon:hover {
+    color: #A5DD9B !important;
+}
+
+#body-post, #my-post {
+    display: block;
+}
+
+.postCard {
+    box-shadow: 0.5rem 0.5rem #424242;
+}
+
+#add-post {
+    bottom: 3%;
+    right: 3%;
+}
+
+
+.commentDiv {
+    display: flex;
+    flex-direction: row;
+}
+
+.commentText {
+    display: flex;
+    justify-content: space-between;
+}
+
+.new-comment {
+    margin-inline: 1rem;
+    margin-block: 1rem;
+}
+
+.comment-input {
+    border: #2f2f32;
+    flex: 8;
+    padding: 5px;
+}
+
+.send-comment {
+    flex: 2;
+}
+
+
+

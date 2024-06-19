@@ -1,0 +1,22 @@
+main {
+    display: flex;
+    align-items: start;
+
+    background: #232323;
+    color: #f6f6f6;
+}
+
+main > div {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0.5rem 0.5rem #1f1e1e;
+    background: #dee2e608;
+
+    overflow: hidden;
+}
+
+#username[disabled] {
+    cursor: not-allowed;
+}

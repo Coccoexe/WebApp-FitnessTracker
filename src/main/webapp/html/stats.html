@@ -1,0 +1,192 @@
+<main>
+  <div class="user">
+    <div class="cardTitle">
+      <div>
+        <h2 tabindex="0" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="Body Stats Info" data-bs-content="This card shows your collected statistics and goals about body measures. With the buttons below is possible to change metric among weight, fatty mass and lean mass, is also possible to change some chart properties.">
+          Body Stats
+        </h2>
+      </div>
+      <hr>
+    </div>
+    <div class="cardBody">
+      <canvas id="bodyChart">Loading...</canvas>
+      <div class="buttons">
+        <div>
+          <div class="btn-group" id="bodyChartMetric">
+            <input type="radio" class="btn-check" name="bodyMetric" id="weight" autocomplete="off" checked />
+            <label class="btn btn-primary" for="weight" data-mdb-ripple-init>Weight</label>
+
+            <input type="radio" class="btn-check" name="bodyMetric" id="fatty" autocomplete="off" />
+            <label class="btn btn-primary" for="fatty" data-mdb-ripple-init>Fatty</label>
+
+            <input type="radio" class="btn-check" name="bodyMetric" id="lean" autocomplete="off" />
+            <label class="btn btn-primary" for="lean" data-mdb-ripple-init>Lean</label>
+          </div>
+          <div class="btn-group" id="bodyChartType">
+            <input type="radio" class="btn-check" name="bodyType" id="body_line" value="line" autocomplete="off"
+                   checked />
+            <label class="btn btn-primary" for="body_line" data-mdb-ripple-init>Line</label>
+
+            <input type="radio" class="btn-check" name="bodyType" id="body_bar" value="bar" autocomplete="off" />
+            <label class="btn btn-primary" for="body_bar" data-mdb-ripple-init>Bars</label>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary" id="newBodyStats" data-bs-toggle="modal"
+                data-bs-target="#statsModal">
+          +
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="statsModal" tabindex="-1" aria-labelledby="statsModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="statsModalLabel">New Body Stats</h5>
+              </div>
+              <div class="modal-body">
+                <form id="statsForm">
+                  <div class="mb-3">
+                    <label for="form-height" class="col-form-label">Height:</label>
+                    <input type="number" class="form-control" id="form-height" name="height" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="form-weight" class="col-form-label">Weight:</label>
+                    <input type="number" class="form-control" id="form-weight" name="weight" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="form-fatty" class="col-form-label">Fatty:</label>
+                    <input type="number" class="form-control" id="form-fatty" name="fatty" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="form-lean" class="col-form-label">Lean:</label>
+                    <input type="number" class="form-control" id="form-lean" name="lean" required>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="stats_goal" id="stats_goal1" value="stats/body"
+                           checked>
+                    <label class="form-check-label" for="stats_goal1">Measure</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="stats_goal" id="stats_goal2" value="goals">
+                    <label class="form-check-label" for="stats_goal2">Goal</label>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button id="closeStats" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button id="submitStats" type="button" class="btn btn-primary">Confirm</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="imc">
+    <div class="cardTitle">
+      <div>
+        <h2 tabindex="0" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="Body Stats Info"
+            data-bs-content="This card displays your BMI (Body Mass Index).
+                BMI is calculated using the formula: Weight / (Height x Height) kg/m².
+                Your BMI classification is determined based on standard reference tables.">
+          BMI
+        </h2>
+        </div>
+      <hr>
+    </div>
+    <div class="cardBody">
+      <div id="imc-value"></div>
+      <div id="imc-comparison">
+        <div>
+          <h4 tabindex="0" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="Mean Value"
+              data-bs-content="This is the difference among your actual BMI value and the average computed over all your measures. Note: measures not goals.">
+            Mean
+          </h4>
+          <div class="text" id="imc-mean"></div>
+        </div>
+        <div>
+          <h4 tabindex="0" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="Global Value"
+              data-bs-content="This is the difference among your actual BMI value and the average computed over measures of all users. Note: measures not goals.">
+          Global
+          </h4>
+          <div class="text" id="imc-global"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="diet">
+    <div class="cardTitle">
+      <div>
+        <h2 tabindex="0" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="Diet Stats Info"
+           data-bs-content="This card shows what is your favorite food and the times you've eaten it.
+             There is also a chart that represent your average consumption of carbohydrates, fats, proteins and the average kcal assumption.">
+          Diet Stats
+        </h2>
+      </div>
+      <hr>
+    </div>
+    <div class="cardBody">
+      <div id="diet-fav">
+        <div>
+          <h3>Favourite Food</h3>
+          <div class="text" id="fav-food"></div>
+        </div>
+        <div>
+          <h3>Times Eaten</h3>
+          <div class="text" id="fav-count"></div>
+        </div>
+      </div>
+      <hr>
+      <canvas id="dietChart">Loading...</canvas>
+      <div class="buttons">
+        <div class="btn-group" id="dietChartType">
+          <input type="radio" class="btn-check" name="dietType" id="diet_bar" value="bar" autocomplete="off" checked />
+          <label class="btn btn-primary" for="diet_bar" data-mdb-ripple-init>Bars</label>
+
+          <input type="radio" class="btn-check" name="dietType" id="diet_doughnut" value="doughnut"
+                 autocomplete="off" />
+          <label class="btn btn-primary" for="diet_doughnut" data-mdb-ripple-init>Doughnut</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="exercises">
+    <div class="cardTitle">
+      <div>
+        <h2 tabindex="0" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="Exercise Stats Info"
+           data-bs-content="Nothing to explain. Just a card to show exercises stats.">
+          Exercise Stats
+        </h2>
+      </div>
+      <hr>
+    </div>
+    <div class="cardBody">
+      <div class="ex-grp" id="exercise-fav">
+        <h4 tabindex="0" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="Favorite"
+            data-bs-content="Your favorite exercise, with the respective number of times you did it.">Favourite</h4>
+        <div class="ex-det">
+          <div class="text" id="fav-ex">NAME</div>
+          <div class="text" id="fav-ex-count">TIMES</div>
+        </div>
+      </div>
+      <div id="best-worst">
+        <div class="ex-grp" id="exercise-best">
+          <h4 tabindex="0" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="Best"
+              data-bs-content="Your best exercise, with the respective weight amount you lift.">Best</h4>
+          <div class="ex-det">
+            <div class="text" id="best-ex">NAME</div>
+            <div class="text" id="best-ex-weight">Weight</div>
+          </div>
+        </div>
+        <div class="ex-grp" id="exercise-worst">
+          <h4 tabindex="0" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="Worst"
+              data-bs-content="Your worst exercise, with the respective weight amount you lift.">Worst</h4>
+          <div class="ex-det">
+            <div class="text" id="worst-ex">NAME</div>
+            <div class="text" id="worst-ex-weight">Weight</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

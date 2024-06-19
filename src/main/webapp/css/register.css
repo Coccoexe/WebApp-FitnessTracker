@@ -1,0 +1,22 @@
+body {
+    background: #f2c18d;
+}
+
+.card {
+    box-shadow: 0.5rem 0.5rem #c19363;
+}
+
+.error-message {
+    color: red;
+    margin-top: 5px;
+    text-align: center;
+}
+
+#registration-error {
+    visibility: hidden;
+}
+
+.icon-large {
+    font-size: 28px;
+    font-weight: 800 !important;
+}
